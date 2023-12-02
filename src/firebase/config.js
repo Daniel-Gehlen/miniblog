@@ -1,14 +1,18 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import dotenv from "dotenv";
+
+// Load environment variables from .env file
+dotenv.config();
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCDrtID-70BP7nGskObXJw-WrhAkESCkdg",
-  authDomain: "miniblog-d6e0c.firebaseapp.com",
-  projectId: "miniblog-d6e0c",
-  storageBucket: "miniblog-d6e0c.appspot.com",
-  messagingSenderId: "806221426939",
-  appId: "1:806221426939:web:323527d59d5291236bc05e",
-  measurementId: "G-FL4PHRFZ6M"
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
